@@ -1,0 +1,34 @@
+ITUS102 - PRACTICAL EXAMINATION | DEBUGGING AND IMPLEMENTATION REPORT
+Date: 12-10-2026 | Task 02 - Campus Canteen Order Calculator
+
+Enrollment No.: 26CE004
+Name: Morvi Rajeshbhai Bakori
+
+SIMPLE BUGS (write a brief explanation for each)
+Bug | Original problem | Correction made | Why required
+S1 | Wrong nav target | Set href="#calculator" | Enables smooth scrolling  
+​S2 | Generic <div> footer | Used <footer> tag | Semantic HTML structure  
+​S3 | CSS background syntax error | Fixed background property | Apply correct background color  
+​S4 | Wrong heading selector | Used #pageTitle ID | Match HTML element ID selector  
+​S5 | Incorrect subtotal operator (+) | Changed to * | Correct multiplication for subtotal  
+​S6 | Incorrect service charge calculation | Set to subtotal * 0.05 | Apply 5% charge policy correctly                 
+
+CODE COMPLETION / IMPLEMENTATION (briefly state what was completed)
+M1: Added UTF-8 charset and responsive viewport meta tags.  
+​M2: Added HTML5 <aside> with an important note heading and text.  
+​M3: Displayed nav links horizontally using Flexbox (space-between).  
+​M4: Displayed info cards using CSS Grid with two equal columns.  
+​M5: Added media query (max-width: 600px) for single-column card stacking.  
+​M6: Completed calculateDiscount function logic.  
+​D1: Implemented getRate(type) using if-else (Student=10, Staff=5, Visitor=0).  
+​D2: Implemented calculateTotal formula returning subtotal minus discount plus service charge.  
+​D3: Added for loop inside buildBreakdown to display running costs.
+
+FUNCTIONAL TEST
+Test input:
+Observed result:
+Mobile layout checked (Yes/No):
+
+GIT VERSION CONTROL
+git log -1 --oneline output:
+GitHub URL (if available):   https://github.com/MorviBakori/WTF-PRACTICAL-SET2.git

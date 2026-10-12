@@ -1,0 +1,44 @@
+function calculateOrder() {
+    const unitPrice = Number(document.getElementById("unitPrice").value);
+    const quantity = Number(document.getElementById("quantity").value);
+    const customerType = document.getElementById("customerType").value;
+    const subtotal = unitPrice * quantity;
+    const rate = getRate(customerType);
+    const discount = calculateDiscount(subtotal, rate);
+    const serviceCharge = subtotal * 0.05;
+    const payable = calculateTotal(subtotal, discount, serviceCharge);
+    document.getElementById("result").textContent = "Subtotal: ₹" + subtotal + " | Discount: ₹" + discount + " | Service: ₹" + serviceCharge + " | Payable: ₹" + payable;
+    document.getElementById("breakdown").innerHTML = buildBreakdown(unitPrice, quantity);
+}
+
+function calculateDiscount(amount, percentage) {
+    // TODO M6: Replace the return value with the discount formula.
+    return (amount * percentage) / 100;
+}
+
+function getRate(type) {
+     // TODO D1: Use if / else if / else. Student=10, Staff=5, Visitor=0.
+    if(type === "Student") {
+        return 10;
+     } else if (type === "Staff") {
+            return 5;
+        } else {
+            return 0;// visitor or drfault
+        }
+}
+
+function calculateTotal(subtotal, discount, serviceCharge) {
+    // TODO D2: Return the amount after discount plus service charge.
+    return subtotal - discount + serviceCharge;
+    return subtotal;
+}
+
+function buildBreakdown(unitPrice, quantity) {
+    // TODO D3: Use a for loop from item 1 to quantity. Show running subtotal (unitPrice * item number).
+    let breakdownHtml = "";
+    for(let i =1; i <=quantity; i++) {
+        let runningCost = unitPrice * i;
+        breakdownHtml +=`<p>Item ${i}: ${runningCost}</p>`;
+    }
+    return breakdownHtml; // or append it to your output DOM element
+}
